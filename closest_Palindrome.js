@@ -19,8 +19,8 @@ const palindromeCheck = (n) => {
 
 const closest_Palindrome = (n) => {
 
-    let lower = n - 1;
-    let upper = n + 1;
+    let lower = Number(n) - 1;
+    let upper = Number(n) + 1;
 
     while (true) {
         if (palindromeCheck(lower)) {

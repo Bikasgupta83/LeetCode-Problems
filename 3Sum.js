@@ -8,7 +8,7 @@ var threeSum = function (nums) {
     let ans = [];
     let seen = new Set();
 
-    nums.sort((a, b) => a - b);
+    nums.sort((a, b) => a - b); 
 
     for (let i = 0; i < nums.length - 2; i++) {
         for (let j = i + 1; j < nums.length - 1; j++) {

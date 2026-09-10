@@ -27,3 +27,4 @@ var validPalindrome = function(s) {
 };
 
 console.log(validPalindrome("abbxa"));
+console.log(validPalindrome("abcda"));

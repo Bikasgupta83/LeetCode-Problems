@@ -3,7 +3,7 @@
 // Create first window
 for (...) {
     ...
-}
+}   
 
 // Slide
 for (...) {

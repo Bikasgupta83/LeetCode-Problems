@@ -36,3 +36,52 @@ var threeSum = function (nums) {
 
 
 
+
+// Optimize 3Sum
+
+const helper = (f,nums,res) =>{
+    let i = f + 1;
+        j = nums.length-1;
+
+    while(i<j){
+        let sum = nums[f] + nums[i] + nums[j];
+
+        if(sum > 0){
+            j--;
+        }else if(sum < 0){
+            i++;
+        }else{
+            res.push([nums[f],nums[i],nums[j]]);
+            i++;
+            j--;
+
+            while(i<j && nums[i] === nums[i-1]){
+                i++;
+            }
+
+            while(i<j && nums[j] === nums[j+1]){
+                j--;
+            }
+        }
+    }
+}
+const optimize3Sum = (nums)=>{
+    nums.sort((a,b)=>a-b);
+
+    let res = [];
+
+    for(let f=0;f<nums.length;f++){
+        if(nums[f] > 0){
+            break;
+        }
+
+        if(f==0 || nums[f] !== nums[f-1]){
+            helper(f,nums,res);
+        }
+    }
+
+    return res;
+}
+
+console.log(optimize3Sum([-1, 0, 1, 2, -1, -4])); // [[-1, -1, 2], [-1, 0, 1]]
+console.log(optimize3Sum([0, 0, 0])); // [[0, 0, 0]]

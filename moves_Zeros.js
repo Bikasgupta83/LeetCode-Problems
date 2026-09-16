@@ -29,3 +29,29 @@ var moveZeroes = function(nums) {
 
 // console.log(moveZeroes([0, 1, 0, 3, 12]));
 // console.log(moveZeroes([0]));
+
+
+
+function Zeroes(nums){
+    let i = 0;
+    let j = i+1;
+
+    while(j<nums.length){
+        if(nums[i]==0 && nums[j]!==0){
+            [nums[i],nums[j]] = [nums[j],nums[i]];
+            i++;
+        }
+        
+        if(nums[i]!==0){
+            i++;
+        }
+
+        j++;
+    }
+    return nums;
+}
+
+
+console.log(Zeroes([0, 1, 0, 3, 12]));
+console.log(Zeroes([0]));
+console.log(Zeroes([1,0,1]));
